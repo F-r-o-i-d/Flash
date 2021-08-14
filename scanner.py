@@ -1,4 +1,5 @@
 import socket, argparse, sys, threading
+import sys
 parser = argparse.parser(sys.argv)
 port_to_scan = []
 print("\033c")
@@ -17,7 +18,7 @@ if not parser.IfExist("-a"):
 	print("\t-a : ip       (required)")
 	print("\t-t : thread   (optional)")
 	print("\t-p : max-port (optional)")
-	exit()
+	sys.exit()
 threadNumber = parser.GetValueOf("-t")
 maxport = parser.GetValueOf("-p")
 if maxport == None:
